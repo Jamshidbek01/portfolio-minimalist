@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'Ibarra Real Nova';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('../fonts/ibarra-real-nova-v20-latin-700.woff2') format('woff2'),
+        url('../fonts/ibarra-real-nova-v20-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/public-sans-v14-latin-regular.woff2') format('woff2'),
+        url('../fonts/public-sans-v14-latin-regular.woff') format('woff');
+}
+
+@mixin responsive ($breakpoint) {
+
+    @if $breakpoint ==tablet {
+        @media screen and (max-width: 830px) {
+            @content
+        }
+    }
+
+    ;
+
+    @if $breakpoint ==m-tablet {
+        @media screen and (max-width: 700px) {
+            @content
+        }
+    }
+
+    ;
+
+    @if $breakpoint ==min-tablet {
+        @media screen and (max-width: 590px) {
+            @content
+        }
+    }
+
+    ;
+
+    @if $breakpoint ==phone {
+        @media screen and (max-width: 425px) {
+            @content
+        }
+    }
+
+    ;
+
+    @if $breakpoint ==m-phone {
+        @media screen and (max-width: 375px) {
+            @content
+        }
+    }
+
+    ;
+
+    @if $breakpoint ==min-phone {
+        @media screen and (max-width: 320px) {
+            @content
+        }
+    }
+
+    ;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid #33323D;
+    padding: 17px 34px;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #33323D;
+    transition: .3s;
+
+    &:hover {
+        background-color: #33323D;
+        color: #fff;
+    }
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #33323D;
+    mix-blend-mode: normal;
+    opacity: 0.15;
+}
+
+
+.title {
+    font-size: 50px;
+
+    @include responsive(tablet) {
+        font-size: 40px;
+    }
+}
+
+::placeholder {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 30px;
+    color: #33323D;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+}
